@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta  http-equiv="Content-Type" content="text/html; charset=GBK" />
+    <title>Title</title>
+</head>
+<body>
+<div id="source" style="width:80px;height:80px;border: 1px solid black;background-color: #bbb;"
+     draggable="true">
+    我的花瓣写
+</div>
+<script type="text/javascript">
+    var so=document.getElementById("source");
+    so.ondragstart = function (e) {
+        e.dataTransfer.setData("text/plain","wwwwww");
+    }
+    so.onDragOver = function (e) {
+        return false;
+    }
+    so.ondrop = function (e) {
+        so.style.position = "absolute";
+        so.style.left = e.pageX +"px";
+        so.style.top = e.pageY + "px";
+        return false;
+    }
+
+</script>
+</body>
+</html>
